@@ -1,9 +1,7 @@
 all: main.o
 	cd heap; make
-	gcc main.o heap/heap.o -o heap.exe
-
-main.o:
 	gcc -c main.c
+	gcc main.o heap/heap.o -o heap.exe
 
 clean:
 	cd heap; make clean
