@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
 	arr[9] = 4;
 	arr[10] = 100;
 
-	printf("Before: ");
+	printf("Before:\t");
 	for (i = 0; i < ARRLEN; i++) {
 		printf("%d ", arr[i]);
 	}
@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
 
 	heapsort(arr, ARRLEN);
 	
-	printf("After: ");
+	printf("After:\t");
 	for (i = 0; i < ARRLEN; i++) {
 		printf("%d ", arr[i]);
 	}

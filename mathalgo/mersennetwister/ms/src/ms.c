@@ -1,4 +1,3 @@
-#include "../../main/inc/main.h"
 // Copied from https://en.wikipedia.org/wiki/Mersenne_Twister
 
 /*
@@ -13,6 +12,9 @@ u, d, l: additional Mersenne Twister tempering bit shifts/masks
 */
 
 // Define MT19937 constants (32-bit RNG)
+
+#include "../inc/ms.h"
+
 enum {
     // Assumes W = 32 (omitting this)
     N = 624,
