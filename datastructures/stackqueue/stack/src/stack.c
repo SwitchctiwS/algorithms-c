@@ -1,4 +1,4 @@
-#include "../../main/inc/main.h"
+#include "../inc/stack.h"
 
 void push(Node_t *top, int data) {
     Node_t *node = malloc(sizeof *node);

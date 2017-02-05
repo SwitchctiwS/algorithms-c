@@ -1,4 +1,4 @@
-#include "../../main/inc/main.h"
+#include "../inc/is.h"
 
 void insertion_sort(int *arr, int length) {
     int i, j;

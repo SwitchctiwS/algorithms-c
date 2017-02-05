@@ -1,9 +1,8 @@
 all:
-	cd main; make
 	cd bst; make
-	gcc main/main.o bst/bst.o -o main.exe
+	gcc -c main.c
+	gcc main.o bst/bst.o -o bst.exe
 
 clean:
-	cd main; make clean
 	cd bst; make clean
-	rm main.exe
+	rm main.o bst.exe

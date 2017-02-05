@@ -1,4 +1,4 @@
-#include "../../main/inc/main.h"
+#include "../inc/bst.h"
 
 void insert(Node_t *root, int data) {
     Node_t *current = malloc(sizeof *current);

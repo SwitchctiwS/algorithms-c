@@ -1,6 +1,4 @@
-all: bst.o
-
-bst.o:
+all:
 	gcc src/bst.c -c
 
 clean:

@@ -1,4 +1,4 @@
-#include "../../main/inc/main.h"
+#include "../inc/queue.h"
 
 void enqueue(Node_t *front, Node_t *back, int data) {
     Node_t *node = malloc(sizeof *node);
