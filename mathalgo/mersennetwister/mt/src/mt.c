@@ -13,7 +13,7 @@ u, d, l: additional Mersenne Twister tempering bit shifts/masks
 
 // Define MT19937 constants (32-bit RNG)
 
-#include "../inc/ms.h"
+#include "../inc/mt.h"
 
 enum {
     // Assumes W = 32 (omitting this)

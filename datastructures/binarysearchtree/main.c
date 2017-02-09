@@ -11,7 +11,13 @@ int main() {
     insert(root, 3);
     insert(root, 5);
     printf("%d ", (search(root, 9) != NULL) ? search(root, 9)->data : -1);
+    printf("\n");
+    preorder_traversal(root);
+    printf("\n");
+
+    delete(root, 7);
 
     preorder_traversal(root);
+    printf("\n");
     return 0;
 }

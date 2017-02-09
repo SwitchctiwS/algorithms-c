@@ -1,32 +1,41 @@
 #include "main.h"
 
-#define ARRLEN 11
+#define MAX_ARR_LEN 100
+#define BUFFER 10
 
 int main(int argc, char* argv[]) {
 	int i;
-	int* arr = malloc(ARRLEN * sizeof(*arr));
-	arr[0] = 5; 
-	arr[1] = 3;
-	arr[2] = 3;
-	arr[3] = 1;
-	arr[4] = 7;
-	arr[5] = 0;
-	arr[6] = 9;
-	arr[7] = 6;
-	arr[8] = 7;
-	arr[9] = 4;
-	arr[10] = 100;
+	int arr_len;
+	char* temp_str = malloc(BUFFER * sizeof(*temp_str));
 
+	// get length of array
+	printf("Array length: ");
+	fgets(temp_str, BUFFER, stdin);
+	arr_len = atoi(temp_str);
+
+	// declare arr
+	int* arr = malloc(arr_len * sizeof(*arr));
+
+	// get elements of arr
+	for (i = 0; i < arr_len; i++) {
+		printf("Enter element %d: ", i);
+		fgets(temp_str, BUFFER, stdin);
+		arr[i] = atoi(temp_str);
+	}
+
+	// print pre-sorted arr
 	printf("Before:\t");
-	for (i = 0; i < ARRLEN; i++) {
+	for (i = 0; i < arr_len; i++) {
 		printf("%d ", arr[i]);
 	}
 	printf("\n");
 
-	heapsort(arr, ARRLEN);
-	
+	// sort arr
+	heapsort(arr, arr_len);
+
+	// print sorted arr	
 	printf("After:\t");
-	for (i = 0; i < ARRLEN; i++) {
+	for (i = 0; i < arr_len; i++) {
 		printf("%d ", arr[i]);
 	}
 	printf("\n");
