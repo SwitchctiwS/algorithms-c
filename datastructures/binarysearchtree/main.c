@@ -15,9 +15,10 @@ int main() {
     preorder_traversal(root);
     printf("\n");
 
-    delete(root, 7);
-
+    printf("Delete 4: ");
+    delete(root, 4);
     preorder_traversal(root);
     printf("\n");
+
     return 0;
 }

@@ -44,76 +44,73 @@ Node_t* search(Node_t *root, int data) {
 	return NULL;
 }
 
-// BUG: does not work (especially for root node)
-// Removal with two children is flawed: look up real solution
 void delete(Node_t* root, int key) {
-	Node_t* current = malloc(sizeof(*current));
-	Node_t* parent = malloc(sizeof(*parent));
-	Node_t* min = malloc()
+	Node_t* current = malloc(sizeof *current);
+	Node_t* parent = malloc(sizeof *parent);
+	Node_t* min = malloc(sizeof *min);
 	enum NodePosition key_position;
-	
+
+	// Finds node that matches key.
 	current = root;
 	while (current->data != key) {
-		if (current == NULL) {
-			return;
-		}
-
-		if (current->data > key) {
+		if (key < current->data) {
 			if (current->left != NULL) {
+				// sets parent to parent node of key node
 				parent = current;
 				current = current->left;
 				key_position = LEFT;
+			} else {
+				// Returns if key not found
+				return;
 			}
-		} else if (current->data < key) {
+		} else if (key > current->data) {
+			// Vice versa for greater than 
 			if (current->right != NULL) {
 				parent = current;
 				current = current->right;
 				key_position = RIGHT;
+			} else {
+				return;
 			}
+		} else { // key == current->data
+			// This is an illegal case indicating that something went wrong.
+			return;
 		}
+
 	}
 
 	if (current->left != NULL && current->right != NULL) {
-		
-	} else if (current->left != NULL) {
-		current->data = current->left->data;
-		current->left = NULL;
-		free(current->left);
-	} else if (current->right != NULL) {
-		current->data = current->right->data;
-		current->right = NULL;
-		free(current->right);
-	} else {
-		if (key_position = LEFT) {
-			parent->left = NULL;
-		} else {
-			parent->right = NULL;
+		// If node has left and right child, find the lowest node
+		// of the right subtree and put it where the key node was
+		min = current->right;
+		if (min->left != NULL) {
+			while (min->left->left != NULL) {
+				min = min->left;
+			}
 		}
+
+		current->data = min->left->data;
+		free(min->left);
+		min->left = NULL;
+	} else if (current->left != NULL) {
+		// If node has left child,
+		// put it where key node was
+		current->data = current->left->data;
+		free(current->left);
+		current->left = NULL;
+	} else if (current->right != NULL) {
+		// If node has right child,
+		// put it where key node was
+		current->data = current->right->data;
+		free(current->right);
+		current->right = NULL;
+	} else {
+		// If no child, delete node
 		free(current);
-	}
-}
-
-void insert_node(Node_t* root, Node_t* node) {
-	Node_t *current = malloc(sizeof(*current));
-	bool exit_flag;
-	current = root;
-
-	exit_flag = false;
-	while (!exit_flag) {
-		if (node->data < current->data) {
-			if (current->left == NULL) {
-				current->left = node;
-				exit_flag = true;
-			} else {
-				current = current->left;
-			}
-		} else {
-			if (current->right == NULL) {
-				current->right = node;
-				exit_flag = true;
-			} else {
-				current = current->right;
-			}
+		if (LEFT == key_position) {
+			parent->left = NULL;
+		} else { // RIGHT == key_position
+			parent->right = NULL;
 		}
 	}
 }
