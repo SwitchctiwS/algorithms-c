@@ -1,7 +1,5 @@
 #include "../inc/bst.h"
 
-enum NodePosition {LEFT, RIGHT};
-
 void insert(Node_t *root, int data) {
 	Node_t *current = malloc(sizeof *current);
 	bool exit_flag;

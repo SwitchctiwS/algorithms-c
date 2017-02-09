@@ -1,3 +1,4 @@
+// Includes:
 #ifndef STDBOOL_H
 	#define STDBOOL_H
 	#include <stdbool.h>
@@ -18,6 +19,10 @@
 	#include "../../node/inc/node.h"
 #endif
 
+// Enums:
+enum NodePosition {LEFT, RIGHT};
+
+// Function Prototypes:
 void insert(Node_t *root, int data);
 Node_t* create_node(int data);
 void delete(Node_t *root, int data);
