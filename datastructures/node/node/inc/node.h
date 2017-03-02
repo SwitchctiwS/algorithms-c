@@ -4,4 +4,4 @@ typedef struct Node {
     struct Node *previous;
     struct Node *left;
     struct Node *right;
-} Node_t;
+} Node;

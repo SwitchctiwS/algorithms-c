@@ -1,7 +1,7 @@
 #include "../inc/queue.h"
 
-void enqueue(Node_t *front, Node_t *back, int data) {
-    Node_t *node = malloc(sizeof *node);
+void enqueue(Node *front, Node *back, int data) {
+    Node *node = malloc(sizeof *node);
     node->data = data;
     node->previous = NULL;
 
@@ -15,13 +15,13 @@ void enqueue(Node_t *front, Node_t *back, int data) {
     back->next = node;
 }
 
-int dequeue(Node_t *front, Node_t *back) {
+int dequeue(Node *front, Node *back) {
     if (front->previous == NULL) {
         return -1;
     }
 
     int data = front->previous->data;
-    Node_t **node = malloc(sizeof **node);
+    Node **node = malloc(sizeof **node);
     *node = front->previous;
 
     if (front->previous->previous == NULL) {
@@ -35,7 +35,7 @@ int dequeue(Node_t *front, Node_t *back) {
     return data;
 }
 
-int peek_front(Node_t *front) {
+int peek_front(Node *front) {
     if (front->previous == NULL) {
         return -1;
     }
@@ -43,8 +43,8 @@ int peek_front(Node_t *front) {
     return front->previous->data;
 }
 
-void print_front_to_back(Node_t *front) {
-    Node_t *current = malloc(sizeof *current);
+void print_front_to_back(Node *front) {
+    Node *current = malloc(sizeof *current);
     current = front->previous;
 
     printf("Queue front-to-back: ");

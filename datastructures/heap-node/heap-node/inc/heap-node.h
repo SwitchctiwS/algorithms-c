@@ -1,10 +1,16 @@
 // Includes:
-#ifndef STDLIB_H
-	#define STDLIB_H
-	#include <stdlib.h>
+#ifndef NODE_H
+	#define NODE_H
+	#include "./heap-node/inc/heap-node.h"
 #endif
 
-// Function Prototypes:
+// Function prototypes:
+/* Inserts node into heap
+Params:
+	root: Root node of the heap
+	data: Data to insert*/
+void insert(Node* root, int data);
+
 /* Builds a max heap
 Params:
 	arr: Array to build heap from

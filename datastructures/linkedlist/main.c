@@ -1,8 +1,8 @@
 #include "main.h"
 
 int main() {
-    Node_t *head = NULL;
-    head = (Node_t*)malloc(sizeof(Node_t));
+    Node *head = NULL;
+    head = (Node*)malloc(sizeof(Node));
     if (head == NULL) {
         return 1;
     }
@@ -28,8 +28,8 @@ int main() {
     return 0;
 }
 
-void print_list(Node_t *head) {
-    Node_t *current = head;
+void print_list(Node *head) {
+    Node *current = head;
 
     while (current != NULL) {
         printf("%d\n", current->data);
@@ -37,29 +37,29 @@ void print_list(Node_t *head) {
     }
 }
 
-void append(Node_t *head, int data) {
-    Node_t *current = head;
+void append(Node *head, int data) {
+    Node *current = head;
     while (current->next != NULL) {
         current = current->next;
     }
 
-    current->next = (Node_t*)malloc(sizeof(Node_t));
+    current->next = (Node*)malloc(sizeof(Node));
     current->next->data = data;
     current->next->next = NULL;
 }
 
-void push(Node_t **head, int data) {
-    Node_t *newNode;
-    newNode = (Node_t*)malloc(sizeof(Node_t));
+void push(Node **head, int data) {
+    Node *newNode;
+    newNode = (Node*)malloc(sizeof(Node));
 
     newNode->data = data;
     newNode->next = *head;
     *head = newNode;
 }
 
-int pop(Node_t **head) {
+int pop(Node **head) {
     int retval = -1;
-    Node_t *nextNode = NULL;
+    Node *nextNode = NULL;
 
     if (*head == NULL) {
         return -1;
@@ -73,11 +73,11 @@ int pop(Node_t **head) {
     return retval;
 }
 
-int removeByIndex(Node_t **head, int n) {
+int removeByIndex(Node **head, int n) {
     int i = 0;
     int retval = -1;
-    Node_t *current = *head;
-    Node_t *tempNode = NULL;
+    Node *current = *head;
+    Node *tempNode = NULL;
 
     if (n == 0) {
         return pop(head);

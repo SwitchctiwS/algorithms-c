@@ -23,9 +23,9 @@
 enum NodePosition {LEFT, RIGHT};
 
 // Function Prototypes:
-void insert(Node_t *root, int data);
-Node_t* create_node(int data);
-void delete(Node_t *root, int data);
-void insert_node(Node_t* root, Node_t* node);
-void preorder_traversal(Node_t *root);
-Node_t* search(Node_t *root, int data);
+void insert(Node *root, int data);
+Node* create_node(int data);
+void delete(Node *root, int data);
+void insert_node(Node* root, Node* node);
+void preorder_traversal(Node *root);
+Node* search(Node *root, int data);

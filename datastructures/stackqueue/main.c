@@ -7,9 +7,9 @@ int main(int argc, char **argv) {
     int data;
     int menu_choice;
     char* temp = malloc(11 * sizeof *temp);
-    Node_t* top = malloc(sizeof *top);
-    Node_t* front = malloc(sizeof *front);
-    Node_t* back = malloc(sizeof *back);
+    Node* top = malloc(sizeof *top);
+    Node* front = malloc(sizeof *front);
+    Node* back = malloc(sizeof *back);
     top->previous = NULL;
     front->previous = NULL;
     back->next = NULL;

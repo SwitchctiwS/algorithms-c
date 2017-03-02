@@ -5,11 +5,11 @@
 typedef struct Node {
     int data;
     struct Node *next;
-} Node_t;
+} Node;
 
-void print_list(Node_t *head);
-void append(Node_t *head, int data);
-void push(Node_t **head, int data);
-int pop(Node_t **head);
-int removeLast(Node_t *head);
-int removeByIndex(Node_t **head, int n);
+void print_list(Node *head);
+void append(Node *head, int data);
+void push(Node **head, int data);
+int pop(Node **head);
+int removeLast(Node *head);
+int removeByIndex(Node **head, int n);

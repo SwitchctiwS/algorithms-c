@@ -13,7 +13,7 @@
 	#include "../../node/inc/node.h"
 #endif
 
-void push(Node_t *top, int data);
-int pop(Node_t *top);
-int peek_top(Node_t *top);
-void print_top_to_bottom(Node_t *top);
+void push(Node *top, int data);
+int pop(Node *top);
+int peek_top(Node *top);
+void print_top_to_bottom(Node *top);

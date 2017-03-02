@@ -1,7 +1,7 @@
 #include "../inc/bst.h"
 
-void insert(Node_t *root, int data) {
-	Node_t *current = malloc(sizeof *current);
+void insert(Node *root, int data) {
+	Node *current = malloc(sizeof *current);
 	bool exit_flag;
 	current = root;
 
@@ -25,8 +25,8 @@ void insert(Node_t *root, int data) {
 	}
 }
 
-Node_t* search(Node_t *root, int data) {
-	Node_t* current = malloc(sizeof *current);
+Node* search(Node *root, int data) {
+	Node* current = malloc(sizeof *current);
 	current = root;
 
 	while (current != NULL) {
@@ -42,10 +42,10 @@ Node_t* search(Node_t *root, int data) {
 	return NULL;
 }
 
-void delete(Node_t* root, int key) {
-	Node_t* current = malloc(sizeof *current);
-	Node_t* parent = malloc(sizeof *parent);
-	Node_t* min = malloc(sizeof *min);
+void delete(Node* root, int key) {
+	Node* current = malloc(sizeof *current);
+	Node* parent = malloc(sizeof *parent);
+	Node* min = malloc(sizeof *min);
 	enum NodePosition key_position;
 
 	// Finds node that matches key.
@@ -113,8 +113,8 @@ void delete(Node_t* root, int key) {
 	}
 }
 
-Node_t* create_node(int data) {
-	Node_t *node = malloc(sizeof *node);
+Node* create_node(int data) {
+	Node *node = malloc(sizeof *node);
 	node->data = data;
 	node->left = NULL;
 	node->right = NULL;
@@ -122,7 +122,7 @@ Node_t* create_node(int data) {
 	return node;
 }
 
-void preorder_traversal(Node_t *root) {
+void preorder_traversal(Node *root) {
 	printf("%d ", root->data);
 
 	if (root->left != NULL) {

@@ -1,7 +1,7 @@
 #include "../inc/stack.h"
 
-void push(Node_t *top, int data) {
-    Node_t *node = malloc(sizeof *node);
+void push(Node *top, int data) {
+    Node *node = malloc(sizeof *node);
     node->data = data;
 
     if (top->previous == NULL) {
@@ -14,12 +14,12 @@ void push(Node_t *top, int data) {
     top->previous = node;
 }
 
-int pop(Node_t *top) {
+int pop(Node *top) {
     if (top->previous == NULL) {
         return -1;
     }
 
-    Node_t **node = malloc(sizeof *node);
+    Node **node = malloc(sizeof *node);
     int data = top->previous->data;
     *node = top->previous;
     top->previous = top->previous->previous;
@@ -30,7 +30,7 @@ int pop(Node_t *top) {
     return data;
 }
 
-int peek_top(Node_t *top) {
+int peek_top(Node *top) {
     if (top->previous == NULL) {
         return -1;
     }
@@ -38,8 +38,8 @@ int peek_top(Node_t *top) {
     return top->previous->data;
 }
 
-void print_top_to_bottom(Node_t *top) {
-    Node_t *current = malloc(sizeof *current);
+void print_top_to_bottom(Node *top) {
+    Node *current = malloc(sizeof *current);
     current = top->previous;
 
     printf("Stack top-to-bottom: ");

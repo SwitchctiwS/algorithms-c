@@ -1,7 +1,7 @@
 #include "main.h"
 
 int main() {
-    Node_t *root = malloc(sizeof *root);
+    Node *root = malloc(sizeof *root);
     root->data = 4;
     root->left = NULL;
     root->right = NULL;
