@@ -6,6 +6,6 @@
 	#include <stdbool.h>
 #endif
 
-#include "./is/inc/is.h"
+#include "./is/is.h"
 
 void print_array(int *arr, int length);

@@ -1,7 +1,7 @@
 all: main.o
 
 main.o:
-	gcc src/is.c -c
+	gcc is.c -c
 
 clean:
 	rm is.o

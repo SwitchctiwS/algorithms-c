@@ -1,1 +1,1 @@
-#include "./bst/inc/bst.h"
+#include "./bst/bst.h"

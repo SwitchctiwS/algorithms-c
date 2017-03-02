@@ -1,5 +1,5 @@
 all:
-	gcc -c src/heapsort.c
+	gcc -c heapsort.c
 
 clean:
 	rm heapsort.o

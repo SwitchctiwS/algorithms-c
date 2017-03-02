@@ -1,5 +1,5 @@
-all:
-	gcc src/bst.c -c
+all: bst.c
+	gcc bst.c -c
 
 clean:
 	rm bst.o

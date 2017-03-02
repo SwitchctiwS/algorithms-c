@@ -1,7 +1,7 @@
 all: bs.o
 
-bs.o:
-	gcc src/bs.c -c
+bs.o: bs.c
+	gcc bs.c -c
 
 clean:
 	rm bs.o

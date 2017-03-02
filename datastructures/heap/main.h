@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "heap/inc/heap.h"
+#include "heap/heap.h"
 
 #define ARRLEN 10 

@@ -1,5 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "heapsort/inc/heapsort.h"
-#include "heap/inc/heap.h"
+#include "heapsort/heapsort.h"
+#include "heap/heap.h"

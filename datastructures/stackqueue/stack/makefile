@@ -1,7 +1,7 @@
 all: stack.o
 
 stack.o:
-	gcc src/stack.c -c
+	gcc stack.c -c
 
 clean:
 	rm stack.o

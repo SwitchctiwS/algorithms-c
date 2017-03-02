@@ -1,5 +1,5 @@
-all: src/heap.c
-	gcc -c src/heap.c
+all: heap.c
+	gcc -c heap.c
 
 clean:
 	rm heap.o

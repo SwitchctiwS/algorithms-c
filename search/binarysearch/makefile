@@ -1,9 +1,8 @@
 all:
+	gcc main.c -c
 	cd bs; make
-	cd main; make
-	gcc main/main.o bs/bs.o -o main.exe
+	gcc main.o bs/bs.o -o bs.exe
 
 clean:
-	cd bs; make clean
-	cd main; make clean
-	rm main.exe
+	rm main.o bs.exe
+	cd vs; make clean
